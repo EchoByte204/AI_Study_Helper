@@ -1,0 +1,57 @@
+{
+  "dataset_name": "Amdahl's Law study-note regression set",
+  "version": 1,
+  "reference": "User-provided detailed Amdahl's Law notes pasted in this Codex thread",
+  "review_status": "calculation_checked; instructor_review_pending",
+  "cases": [
+    {
+      "id": "speedup_basic_40_to_10",
+      "topic": "Speedup definition",
+      "question": "A program takes 40 seconds before optimization and 10 seconds after. What is its speedup?",
+      "expected_answer": "The speedup is 4×.",
+      "calculation": {"kind": "ratio", "numerator": 40, "denominator": 10, "expected": 4.0}
+    },
+    {
+      "id": "amdahl_fraction_06_factor_3",
+      "topic": "Amdahl's Law",
+      "question": "If 60% of a program is improved by a factor of 3, what is the total speedup?",
+      "expected_answer": "The total speedup is approximately 1.667×.",
+      "calculation": {"kind": "amdahl", "fraction": 0.6, "part_speedup": 3, "expected": 1.6666666667}
+    },
+    {
+      "id": "train_to_flight_trip",
+      "topic": "Amdahl's Law worked example",
+      "question": "A 30-hour train segment becomes a 3-hour flight, while a 3-hour cab segment is unchanged. What is the journey speedup?",
+      "expected_answer": "The total time changes from 33 hours to 6 hours, so the speedup is 5.5×.",
+      "calculation": {"kind": "ratio", "numerator": 33, "denominator": 6, "expected": 5.5}
+    },
+    {
+      "id": "trip_segment_speed_improvement",
+      "topic": "Amdahl's Law worked example",
+      "question": "A trip has a 10-hour unchanged segment and a 15-hour segment that becomes 10 hours. What is the overall speedup?",
+      "expected_answer": "The total time changes from 25 hours to 20 hours, so the speedup is 1.25×.",
+      "calculation": {"kind": "ratio", "numerator": 25, "denominator": 20, "expected": 1.25}
+    },
+    {
+      "id": "parallel_67_percent_two_cores",
+      "topic": "Parallel processing",
+      "question": "A program is 67% parallelizable. Using Amdahl's Law, what speedup does it get on two cores?",
+      "expected_answer": "The speedup is approximately 1.504×, assuming no parallel overhead.",
+      "calculation": {"kind": "amdahl", "fraction": 0.67, "part_speedup": 2, "expected": 1.5037593985}
+    },
+    {
+      "id": "parallel_67_percent_four_cores",
+      "topic": "Parallel processing",
+      "question": "A program is 67% parallelizable. Using Amdahl's Law, what speedup does it get on four cores?",
+      "expected_answer": "The speedup is approximately 2.010×, assuming no parallel overhead.",
+      "calculation": {"kind": "amdahl", "fraction": 0.67, "part_speedup": 4, "expected": 2.0100502513}
+    },
+    {
+      "id": "solve_part_speedup_for_target",
+      "topic": "Rearranging Amdahl's Law",
+      "question": "If 60% of a program is improved and the target overall speedup is 5/3, what speedup is required for the improved part?",
+      "expected_answer": "The improved part must be sped up by a factor of 3.",
+      "calculation": {"kind": "solve_part_speedup", "fraction": 0.6, "overall_speedup": 1.6666666667, "expected": 3.0}
+    }
+  ]
+}
